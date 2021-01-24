@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    tools:context=".JualanActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/blokkuning"
+        app:liftOnScroll="true"
+        app:liftOnScrollTargetViewId="@id/scroll_view"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <LinearLayout
+                android:id="@+id/navigation_back"
+                android:background="?android:selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:gravity="center">
+
+                <ImageView
+                    android:contentDescription="@null"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_navigate_before" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Jualan"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:descendantFocusability="beforeDescendants"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="32dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/but_bag"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginBottom="12dp"
+                android:layout_gravity="end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_marginEnd="8dp"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="@null"
+                    android:layout_width="28dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_outline_shopping_bag_24"
+                    app:tint="@color/blokkuning" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="My Bag"
+                    android:textColor="@color/blokkuning"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selamat Pagi"
+                android:textColor="@color/blokkuning"
+                android:textSize="16sp" />
+
+            <!--            <TextView-->
+            <!--                android:layout_marginStart="18dp"-->
+            <!--                android:layout_marginEnd="8dp"-->
+            <!--                android:layout_marginBottom="8dp"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Sayur Segar Terpercaya"-->
+            <!--                android:textColor="@color/grey_dark"-->
+            <!--                android:textSize="18sp"-->
+            <!--                android:fontFamily="@font/open_sans_bold" />-->
+
+            <LinearLayout
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_search"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="@null"
+                    android:layout_width="18dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_search"
+                    app:tint="@color/blokkuningtua" />
+
+                <EditText
+                    android:id="@+id/ed_cari"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/blokkuning"
+                    android:hint="Cari"
+                    android:background="@null"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_margin="4dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/blokkuningtran">
+
+                    <LinearLayout
+                        android:id="@+id/ll_item"
+                        android:background="?android:selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_title"
+                            android:padding="2dp"
+                            android:gravity="center"
+                            android:background="@color/blokkuning"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:lineSpacingMultiplier="0.8"
+                            android:text="Baju/Fashion"
+                            tools:text="Petani Jagung\nYogyakarta"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:visibility="visible"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/iv_product"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:contentDescription="@null"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintDimensionRatio="H, 1:1"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:src="@drawable/img1"
+                                tools:src="@drawable/ic_launcher_background" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <RelativeLayout
+                            android:layout_marginTop="2dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentStart="true"
+                                android:id="@+id/tv_product_name"
+                                android:layout_toStartOf="@id/rl_add_to_bag"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginEnd="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/ijotua"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:text="Baju Gamis Panjang"
+                                tools:text="Jagung Manis"/>
+
+                            <LinearLayout
+                                android:layout_alignParentBottom="true"
+                                android:paddingBottom="10dp"
+                                android:id="@+id/ll_ket"
+                                android:layout_alignParentStart="true"
+                                android:layout_below="@id/tv_product_name"
+                                android:layout_toStartOf="@id/rl_add_to_bag"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_price"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginEnd="4dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/ijotua"
+                                    android:textSize="14sp"
+                                    android:text="Rp 65.000"
+                                    tools:text="Rp 11.000"/>
+
+                                <TextView
+                                    android:id="@+id/tv_satuan"
+                                    android:layout_marginStart="0dp"
+                                    android:layout_marginEnd="4dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/ijotua"
+                                    android:textSize="12sp"
+                                    android:text="/2 lusin"
+                                    tools:text="/250gr"/>
+
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:layout_alignBottom="@id/ll_ket"
+                                android:id="@+id/rl_add_to_bag"
+                                android:layout_alignParentEnd="true"
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:background="@drawable/bg_add_to_bag">
+
+                                <ImageView
+                                    android:id="@+id/item_add_bag"
+                                    android:contentDescription="@null"
+                                    android:layout_centerInParent="true"
+                                    android:layout_width="24dp"
+                                    android:layout_height="wrap_content"
+                                    android:adjustViewBounds="true"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/ic_outline_shopping_bag_24"
+                                    app:tint="@color/white" />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_margin="4dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/blokkuningtran">
+
+                    <LinearLayout
+                        android:id="@+id/ll_item2"
+                        android:background="?android:selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_title2"
+                            android:padding="2dp"
+                            android:gravity="center"
+                            android:background="@color/blokkuning"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:lineSpacingMultiplier="0.8"
+                            android:text="Baju/Fashion"
+                            tools:text="Petani Jagung\nYogyakarta"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:visibility="visible"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/iv_product2"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:contentDescription="@null"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintDimensionRatio="H, 1:1"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:src="@drawable/img3"
+                                tools:src="@drawable/ic_launcher_background" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <RelativeLayout
+                            android:layout_marginTop="2dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentStart="true"
+                                android:id="@+id/tv_product_name2"
+                                android:layout_toStartOf="@id/rl_add_to_bag2"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginEnd="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/ijotua"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:text="Baju Gamis Wanita baru"
+                                tools:text="Jagung Manis"/>
+
+                            <LinearLayout
+                                android:layout_alignParentBottom="true"
+                                android:paddingBottom="10dp"
+                                android:id="@+id/ll_ket2"
+                                android:layout_alignParentStart="true"
+                                android:layout_below="@id/tv_product_name2"
+                                android:layout_toStartOf="@id/rl_add_to_bag2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_price2"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginEnd="4dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/ijotua"
+                                    android:textSize="14sp"
+                                    android:text="Rp 65.000"
+                                    tools:text="Rp 11.000"/>
+
+                                <TextView
+                                    android:id="@+id/tv_satuan2"
+                                    android:layout_marginStart="0dp"
+                                    android:layout_marginEnd="4dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/ijotua"
+                                    android:textSize="12sp"
+                                    android:text="/2 lusin"
+                                    tools:text="/250gr"/>
+
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:layout_alignBottom="@id/ll_ket2"
+                                android:id="@+id/rl_add_to_bag2"
+                                android:layout_alignParentEnd="true"
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:background="@drawable/bg_add_to_bag">
+
+                                <ImageView
+                                    android:id="@+id/item_add_bag2"
+                                    android:contentDescription="@null"
+                                    android:layout_centerInParent="true"
+                                    android:layout_width="24dp"
+                                    android:layout_height="wrap_content"
+                                    android:adjustViewBounds="true"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/ic_outline_shopping_bag_24"
+                                    app:tint="@color/white" />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_margin="4dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/blokkuningtran">
+
+                    <LinearLayout
+                        android:id="@+id/ll_item3"
+                        android:background="?android:selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_title3"
+                            android:padding="2dp"
+                            android:gravity="center"
+                            android:background="@color/blokkuning"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:lineSpacingMultiplier="0.8"
+                            android:text="Baju/Fashion"
+                            tools:text="Petani Jagung\nYogyakarta"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:visibility="visible"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/iv_product3"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:contentDescription="@null"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintDimensionRatio="H, 1:1"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:src="@drawable/img2"
+                                tools:src="@drawable/ic_launcher_background" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <RelativeLayout
+                            android:layout_marginTop="2dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentStart="true"
+                                android:id="@+id/tv_product_name3"
+                                android:layout_toStartOf="@id/rl_add_to_bag3"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginEnd="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/ijotua"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:text="Jaket Tebal Parasit"
+                                tools:text="Jagung Manis"/>
+
+                            <LinearLayout
+                                android:layout_alignParentBottom="true"
+                                android:paddingBottom="10dp"
+                                android:id="@+id/ll_ket3"
+                                android:layout_alignParentStart="true"
+                                android:layout_below="@id/tv_product_name3"
+                                android:layout_toStartOf="@id/rl_add_to_bag3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_price3"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginEnd="4dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/ijotua"
+                                    android:textSize="14sp"
+                                    android:text="Rp 65.000"
+                                    tools:text="Rp 11.000"/>
+
+                                <TextView
+                                    android:id="@+id/tv_satuan3"
+                                    android:layout_marginStart="0dp"
+                                    android:layout_marginEnd="4dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/ijotua"
+                                    android:textSize="12sp"
+                                    android:text="/2 lusin"
+                                    tools:text="/250gr"/>
+
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:layout_alignBottom="@id/ll_ket3"
+                                android:id="@+id/rl_add_to_bag3"
+                                android:layout_alignParentEnd="true"
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:background="@drawable/bg_add_to_bag">
+
+                                <ImageView
+                                    android:id="@+id/item_add_bag3"
+                                    android:contentDescription="@null"
+                                    android:layout_centerInParent="true"
+                                    android:layout_width="24dp"
+                                    android:layout_height="wrap_content"
+                                    android:adjustViewBounds="true"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/ic_outline_shopping_bag_24"
+                                    app:tint="@color/white" />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_margin="4dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/blokkuningtran">
+
+                    <LinearLayout
+                        android:id="@+id/ll_item4"
+                        android:background="?android:selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_title4"
+                            android:padding="2dp"
+                            android:gravity="center"
+                            android:background="@color/blokkuning"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:lineSpacingMultiplier="0.8"
+                            android:text="Baju/Fashion"
+                            tools:text="Petani Jagung\nYogyakarta"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:visibility="visible"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/iv_product4"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:contentDescription="@null"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintDimensionRatio="H, 1:1"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:src="@drawable/img4"
+                                tools:src="@drawable/ic_launcher_background" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <RelativeLayout
+                            android:layout_marginTop="2dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentStart="true"
+                                android:id="@+id/tv_product_name4"
+                                android:layout_toStartOf="@id/rl_add_to_bag4"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginEnd="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/ijotua"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:text="Baju Anak Imut"
+                                tools:text="Jagung Manis"/>
+
+                            <LinearLayout
+                                android:layout_alignParentBottom="true"
+                                android:paddingBottom="10dp"
+                                android:id="@+id/ll_ket4"
+                                android:layout_alignParentStart="true"
+                                android:layout_below="@id/tv_product_name4"
+                                android:layout_toStartOf="@id/rl_add_to_bag4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_price4"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginEnd="4dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/ijotua"
+                                    android:textSize="14sp"
+                                    android:text="Rp 65.000"
+                                    tools:text="Rp 11.000"/>
+
+                                <TextView
+                                    android:id="@+id/tv_satuan4"
+                                    android:layout_marginStart="0dp"
+                                    android:layout_marginEnd="4dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/ijotua"
+                                    android:textSize="12sp"
+                                    android:text="/2 lusin"
+                                    tools:text="/250gr"/>
+
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:layout_alignBottom="@id/ll_ket4"
+                                android:id="@+id/rl_add_to_bag4"
+                                android:layout_alignParentEnd="true"
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:background="@drawable/bg_add_to_bag">
+
+                                <ImageView
+                                    android:id="@+id/item_add_bag4"
+                                    android:contentDescription="@null"
+                                    android:layout_centerInParent="true"
+                                    android:layout_width="24dp"
+                                    android:layout_height="wrap_content"
+                                    android:adjustViewBounds="true"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/ic_outline_shopping_bag_24"
+                                    app:tint="@color/white" />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

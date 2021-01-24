@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/blokkuning"
+        app:liftOnScroll="true"
+        app:liftOnScrollTargetViewId="@id/scroll_view"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <LinearLayout
+                android:id="@+id/navigation_back"
+                android:background="?android:selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:gravity="center">
+
+                <ImageView
+                    android:contentDescription="@null"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_navigate_before" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Profile"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_profil"
+                    android:layout_width="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="100dp"
+                    android:src="@drawable/ic_outline_people_alt_24"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:background="@drawable/rounded_bg"
+                >
+                <TextView
+                    android:id="@+id/nomor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="104dp"
+                    android:text="100989" />
+
+                <TextView
+                    android:id="@+id/nama_member"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nomor"
+                    android:layout_alignEnd="@+id/nomor"
+                    android:layout_marginTop="20dp"
+                    android:text="Jhon Doe" />
+
+                <TextView
+                    android:id="@+id/ttl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nama_member"
+                    android:layout_alignStart="@+id/nama_member"
+                    android:layout_marginTop="20dp"
+                    android:text="12/01/1987" />
+
+                <TextView
+                    android:id="@+id/jk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ttl"
+                    android:layout_alignStart="@+id/ttl"
+                    android:layout_marginTop="20dp"
+                    android:text="Laki-laki" />
+
+                <TextView
+                    android:id="@+id/alamat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/jk"
+                    android:layout_alignEnd="@+id/jk"
+                    android:layout_marginTop="20dp"
+                    android:text="Gunung Kidul" />
+
+                <TextView
+                    android:id="@+id/TextView05"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/alamat"
+                    android:layout_alignStart="@+id/TextView03"
+                    android:layout_alignBottom="@+id/alamat"
+                    android:text="Alamat" />
+
+                <TextView
+                    android:id="@+id/TextView03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/jk"
+                    android:layout_alignStart="@+id/TextView04"
+                    android:layout_alignBottom="@+id/jk"
+                    android:text="Jenis Kelamin" />
+
+                <TextView
+                    android:id="@+id/TextView04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/ttl"
+                    android:layout_alignStart="@+id/TextView02"
+                    android:layout_alignBottom="@+id/ttl"
+                    android:text="Tanggal Lahir" />
+
+                <TextView
+                    android:id="@+id/TextView02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/nama_member"
+                    android:layout_alignStart="@+id/TextView01"
+                    android:layout_alignBottom="@+id/nama_member"
+                    android:text="Nama" />
+
+                <TextView
+                    android:id="@+id/TextView01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/nama_member"
+                    android:layout_alignParentStart="true"
+                    android:text="Nomor" />
+
+            </RelativeLayout>
+            <Button
+                android:id="@+id/but_edit"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Edit"
+                android:textSize="12sp"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:layout_marginEnd="40dp"
+                android:layout_marginStart="40dp"
+                android:layout_gravity="center_vertical"
+                android:textColor="@android:color/white"
+                android:background="@drawable/login_button"
+                />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
